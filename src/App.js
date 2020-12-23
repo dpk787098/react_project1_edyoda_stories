@@ -1,4 +1,4 @@
-import './App.css';
+import classes from './App.module.css';
 import TopBar from './components/header/topbar';
 import FilterComponent from './components/filter_component/filter_comp';
 import filterIcon  from './assets/images/filter_icon.png';
@@ -87,25 +87,25 @@ function App() {
   return (
     <div>
       <TopBar />
-      <div className="main_screen">
-        <div className="latest_post_ttl">Latest Posts</div>
-        <div className="filter_cont">
-          <div className="filter_title_wrapper">
+      <div className={classes.main_screen}>
+        <div className={classes.latest_post_ttl}>Latest Posts</div>
+        <div className={classes.filter_cont}>
+          <div className={classes.filter_title_wrapper}>
             <img src={filterIcon} alt="filter icon"/>
             <p>Filter by Category</p>
           </div>
-          <div className="filters_button_container">
+          <div className={classes.filters_button_container}>
             {
               filterItems.map((data,index) =>
-                <FilterComponent selected={data.selected} name={data.name}/>
+                <FilterComponent key={index} selected={data.selected} name={data.name}/>
               )
             }
           </div>
         </div>
-        <div className="cards_container">
+        <div className={classes.cards_container}>
           {
             cardDataArray.map((data,index)=>
-              <CardComponent img={data.thumbnail} title={data.title} author={data.author} date={data.date} description={data.description} />
+              <CardComponent key={index} img={data.thumbnail} title={data.title} author={data.author} date={data.date} description={data.description} />
             )
           }
         </div>

@@ -1,10 +1,10 @@
 import React from 'react';
-import './filter_comp.css';
+import styles from './filter_comp.module.css';
 
 const FilterComponent = (props) => {
     const {name,selected} = props;
     return ( 
-        <div className = {selected ? "filter_wrapper active" : "filter_wrapper"} >{name}</div>
+        <div className = {selected ? `${styles.filter_wrapper} ${styles.active}` : `${styles.filter_wrapper}`} >{name}</div>
      );
 }
  
