@@ -1,3 +1,4 @@
+import React from 'react';
 import classes from './App.module.css';
 import TopBar from './components/header/topbar';
 import FilterComponent from './components/filter_component/filter_comp';
